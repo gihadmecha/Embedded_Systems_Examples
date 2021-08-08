@@ -8,7 +8,7 @@
 
 int main()
 {
-    printf("Enter number to get it's factorial. \n");
+    printf("Enter a number to get it's factorial. \n");
 
     while(1)
     {

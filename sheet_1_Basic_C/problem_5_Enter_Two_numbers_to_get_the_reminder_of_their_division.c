@@ -23,7 +23,7 @@ int main()
         printf("The numerator = %d \n",number_1);
 
         //if the number you entered is negative, Enter another positive number instead of it.
-        while(number_1 <= 0)
+        while(number_1 < 0)
         {
             printf("it's not a positive number \n");
             printf("Enter a positive integer numerator number: ");
@@ -37,7 +37,7 @@ int main()
         printf("The denominator = %d \n",number_2);
 
         //if the number you entered is negative, Enter another positive number instead of it.
-        while(number_2 <= 0)
+        while(number_2 < 0)
         {
             printf("it's not a positive number \n");
             printf("Enter a positive integer denominator number: ");
@@ -45,18 +45,26 @@ int main()
             printf("the denominator = %d \n", number_2 );
         }
 
-        //before anything, because the numerator as it is(it has not changed), we can assume it the reminder
-        reminder = number_1;
-
-        //the main idea of the % operation
-        while (reminder >= number_2)
+        // any_number/0 = unknown answer
+        // because (any_number - 0) inside the following while loop, let this while loop is infinity
+        if(number_2 == 0)
         {
-         reminder -= number_2 ;
+            printf("Syntax Error \n");
         }
+        else
+        {
+            //before anything, because the numerator as it is(it has not changed), we can assume it the reminder
+            reminder = number_1;
 
-        //print the reminder.
-        printf("the reminder of %d %% %d = %d \n", number_1, number_2, reminder);
+            //the main idea of the % operation
+            while (reminder >= number_2)
+            {
+                reminder -= number_2 ;
+            }
 
+            //print the reminder.
+            printf("the reminder of %d %% %d = %d \n", number_1, number_2, reminder);
+        }
     }
 
     return 0;
